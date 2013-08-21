@@ -4,7 +4,7 @@
 #include <atomic>
 #include <cstddef>
 
-static constexpr size_t CachelineSize = 64;
+#include "internal/details.h"
 
 namespace SLFree {
 
@@ -60,11 +60,11 @@ namespace SLFree {
             private:
                 std::atomic<size_t> headIndex;
 
-                char pad1_[CachelineSize - sizeof (headIndex)];
+                cacheline_pad_a pad1_;
 
                 std::atomic<size_t> tailIndex;
 
-                char pad2_[CachelineSize - sizeof (tailIndex)];
+                cacheline_pad_a pad2_;
 
                 T buffer_[Size_]; 
 
