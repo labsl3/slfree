@@ -14,8 +14,8 @@ namespace SLFree {
                 enum { Size_ = Size + 1 };
 
                 BoundedQueueSPSC() :
-                    headIndex { ATOMIC_VAR_INIT(0) },
-                    tailIndex { ATOMIC_VAR_INIT(0) }
+                    headIndex { 0 },
+                    tailIndex { 0 }
                 {
                 }
 
