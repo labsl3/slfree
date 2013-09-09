@@ -10,5 +10,4 @@ set(CXX_FILES
   ${CXX_FILES}
 )
 
-add_executable( ${PROJECT_NAME} ${CXX_FILES} )
-target_link_libraries( ${PROJECT_NAME} "" )
+add_library( ${PROJECT_NAME} ${CXX_FILES} )
