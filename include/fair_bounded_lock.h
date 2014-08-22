@@ -2,6 +2,10 @@
    Mathieu Stefani, 21 August 2014
    
    A Fair lock that uses a bounded queue to order threads
+   The "Fairness" is a property of the lock meaning that each thread
+   will wait for its turn in order when the lock is under contention. This means
+   that no random thread will "steal" the lock while some other threads have
+   been waiting for longer.
 
     TODO: avoid cacheline sharing by making sure that each boolean from the ring buffer
     ends up in its own cacheline
